@@ -1,25 +1,17 @@
-# Perseus Computing
+# Thomas Connally
 
-Building infrastructure for AI agents — context engines, persistent memory, and tool intelligence.
+Founder of **[Perseus Computing LLC](https://github.com/Perseus-Computing-LLC)** — building infrastructure for AI agents.
 
-**Founder:** Thomas Connally · **Founded:** June 2026
-
----
-
-## What we build
-
-- **[Perseus](https://github.com/tcconnally/perseus)** — Live context engine. Resolves environment state before an AI assistant opens a file. One command, zero orientation.
-- **[Mimir](https://github.com/tcconnally/mimir)** — Persistent memory for AI agents. MCP-native. SQLite + FTS5. Fully local, syncs across devices.
-- **[MCTS](https://github.com/tcconnally/MCTS)** — Model Context Threat Scanner. Security scanning for MCP server registries. 23 analyzers, parallel execution.
+All active development happens at [Perseus-Computing-LLC](https://github.com/Perseus-Computing-LLC).
 
 ---
 
-## Philosophy
+### Active projects
 
-- **Local-first.** No cloud dependencies. Everything runs on your machine.
-- **Protocol-native.** MCP from day one. Works with any MCP-compatible agent.
-- **Real metrics.** Every stat card backed by measured data, not pitch-deck numbers.
+- **[Perseus](https://github.com/Perseus-Computing-LLC/perseus)** — Live context engine. Resolves environment state before an AI assistant opens a file.
+- **[Mimir](https://github.com/Perseus-Computing-LLC/mimir)** — Persistent memory for AI agents. MCP-native, fully local.
+- **[MCTS](https://github.com/Perseus-Computing-LLC/MCTS)** — Model Context Threat Scanner for MCP server registries.
 
 ---
 
-> *"Don't meet the Gorgon's gaze. Reflect it."* — Perseus
+[perseus.observer](https://perseus.observer) · [PyPI](https://pypi.org/project/perseus-ctx/)
