@@ -4,121 +4,136 @@
 <meta charset="UTF-8">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Times New Roman', Georgia, serif; font-size: 10.5pt; line-height: 1.45; color: #1a1a1a; max-width: 7.5in; margin: 0 auto; padding: 0.4in; }
-  .header { border-bottom: 2.5px solid #1a1a1a; padding-bottom: 8px; margin-bottom: 14px; }
-  .header .ref { font-size: 9pt; color: #555; margin-bottom: 4px; }
-  .header h1 { font-size: 16pt; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 2px; }
-  .header .sub { font-size: 10pt; color: #444; }
-  .summary { background: #f8f8f8; border-left: 3px solid #1a1a1a; padding: 10px 12px; margin-bottom: 14px; font-size: 9.5pt; }
-  .summary strong { font-size: 10pt; }
-  h2 { font-size: 11pt; font-weight: 700; margin: 14px 0 6px 0; padding-bottom: 2px; border-bottom: 1px solid #ddd; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 10px; }
-  .card { background: #fafafa; border: 1px solid #e0e0e0; border-radius: 3px; padding: 10px 11px; }
-  .card h3 { font-size: 10.5pt; font-weight: 700; margin-bottom: 4px; color: #1a1a1a; }
-  .card .tag { display: inline-block; background: #1a1a1a; color: #fff; font-size: 7.5pt; font-weight: 700; padding: 1px 6px; border-radius: 2px; margin-right: 4px; margin-bottom: 4px; }
-  .card p { font-size: 9pt; margin-bottom: 4px; }
-  .card .challenge { font-size: 8.5pt; color: #555; margin-top: 6px; font-style: italic; }
-  .specs { font-size: 8.5pt; color: #555; margin-top: 6px; line-height: 1.5; }
+  body { font-family: 'Times New Roman', Georgia, serif; font-size: 10pt; line-height: 1.42; color: #1a1a1a; max-width: 7.5in; margin: 0 auto; padding: 0.35in; }
+  .header { border-bottom: 2.5px solid #1a1a1a; padding-bottom: 7px; margin-bottom: 12px; }
+  .header .ref { font-size: 8.5pt; color: #555; margin-bottom: 3px; }
+  .header h1 { font-size: 15pt; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 1px; }
+  .header .sub { font-size: 9.5pt; color: #444; }
+  .summary { background: #f8f8f8; border-left: 3px solid #1a1a1a; padding: 8px 10px; margin-bottom: 12px; font-size: 9pt; }
+  h2 { font-size: 10.5pt; font-weight: 700; margin: 12px 0 5px 0; padding-bottom: 1px; border-bottom: 1px solid #ddd; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+  .card { background: #fafafa; border: 1px solid #e0e0e0; border-radius: 3px; padding: 8px 10px; }
+  .card h3 { font-size: 10pt; font-weight: 700; margin-bottom: 3px; }
+  .card .tag { display: inline-block; background: #1a1a1a; color: #fff; font-size: 7pt; font-weight: 700; padding: 1px 5px; border-radius: 2px; margin-right: 3px; margin-bottom: 3px; }
+  .card p { font-size: 8.5pt; margin-bottom: 3px; }
+  .card .challenge { font-size: 8pt; color: #555; margin-top: 5px; }
+  .card .challenge strong { color: #333; }
+  .specs { font-size: 8pt; color: #555; margin-top: 5px; line-height: 1.5; }
   .specs span { font-weight: 600; color: #333; }
-  .footer { border-top: 1px solid #ccc; margin-top: 14px; padding-top: 8px; font-size: 8.5pt; color: #666; display: flex; justify-content: space-between; }
+  table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin: 7px 0; }
+  table th { background: #1a1a1a; color: #fff; font-size: 7.5pt; font-weight: 600; padding: 3px 7px; text-align: left; }
+  table td { padding: 3px 7px; border-bottom: 1px solid #e8e8e8; font-size: 8pt; vertical-align: top; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  ul { padding-left: 13px; font-size: 8.5pt; }
+  ul li { margin-bottom: 1px; }
+  .footer { border-top: 1px solid #ccc; margin-top: 10px; padding-top: 6px; font-size: 8pt; color: #666; display: flex; justify-content: space-between; }
   .footer a { color: #333; }
-  table { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 8px 0; }
-  table th { background: #1a1a1a; color: #fff; font-size: 8pt; font-weight: 600; padding: 4px 8px; text-align: left; }
-  table td { padding: 4px 8px; border-bottom: 1px solid #e0e0e0; font-size: 8.5pt; vertical-align: top; }
-  table tr:last-child td { border-bottom: none; }
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  ul { padding-left: 14px; font-size: 9pt; }
-  ul li { margin-bottom: 2px; }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <div class="ref">DARPA-SN-26-80 · AI Forge Program · IPTO</div>
+  <div class="ref">DARPA-SN-26-80 &middot; AI Forge Program &middot; IPTO</div>
   <h1>Perseus &amp; Mimir: Open-Source Infrastructure<br>for AI Control &amp; Interpretability</h1>
-  <div class="sub">Technical capability brief — Thomas Connally · tcconnally@gmail.com · github.com/tcconnally</div>
+  <div class="sub">Technical capability brief &middot; Thomas Connally &middot; tcconnally@gmail.com &middot; github.com/Perseus-Computing-LLC</div>
 </div>
 
 <div class="summary">
-  <strong>Two production-deployed, MIT-licensed systems that directly address the AI Forge Critical AI Challenges.</strong> Perseus grounds LLMs with verified context at every decision boundary (AI Control). Mimir provides auditable persistent memory with full provenance trails (AI Interpretability). Both are self-contained sidecar processes — no cloud dependencies, deployable on air-gapped infrastructure. Integrated with agent platforms today.
+  <strong>Two production-deployed, MIT-licensed systems that directly address the AI Forge Critical AI Challenges.</strong> Perseus (v1.0.8) is a live context engine that resolves environment state and injects it before every LLM interaction &mdash; anchoring agents to ground truth. Mimir (v1.0.1) is a persistent memory MCP server with 30 tools, structured entities, journaled decision trails, and hybrid FTS5+vector search. Both are self-contained binaries with no cloud dependencies, deployable on air-gapped infrastructure. Together they give operators end-to-end traceability from context input through memory formation to agent action.
 </div>
 
 <div class="grid">
   <div class="card">
-    <h3>Perseus · Live Context Engine</h3>
+    <h3>Perseus &middot; Live Context Engine</h3>
     <span class="tag">AI Control</span><span class="tag">Challenge 2</span><span class="tag">Challenge 4</span>
-    <p>Pre-resolves environment state at every session boundary and injects a canonical snapshot before the model acts. Eliminates context decay — the dominant failure mode in long-running agentic AI.</p>
+    <p>Pre-resolves environment state at every session boundary and injects a canonical snapshot before the model acts. Eliminates context decay &mdash; the dominant failure mode in long-running agentic AI. Listed on the MCP Registry via Smithery.</p>
     <div class="challenge">
-      <strong>→ Challenge 4 (Agentic Interpretability):</strong> Every context snapshot is a verifiable decision point. Operators trace any agent action to the exact state that informed it — system-level auditing without model internals.<br>
-      <strong>→ Challenge 2 (Long-Horizon Failures):</strong> Snapshot timeline enables replay and root-cause isolation. Investigators identify when drift entered and which decisions it corrupted.
+      <strong>&rarr; Challenge 4 (Agentic Interpretability):</strong> Context snapshots produce verifiable decision-point records. Any agent action is traceable to the exact state that informed it.<br>
+      <strong>&rarr; Challenge 2 (Long-Horizon Failures):</strong> Snapshot timeline enables replay and root-cause isolation. Investigators identify when drift entered and which decisions it corrupted.
     </div>
     <div class="specs">
-      <span>Status:</span> Live · <span>License:</span> MIT · <span>Footprint:</span> Single process, no GPU · <span>Integration:</span> Hermes Agent platform · perseus.observer
+      <span>Version:</span> 1.0.8 &middot; <span>License:</span> MIT &middot; <span>Install:</span> pip install perseus-ctx &middot; <span>MCP:</span> Smithery-listed &middot; perseus.observer
     </div>
   </div>
 
   <div class="card">
-    <h3>Mimir · Auditable Memory Engine</h3>
+    <h3>Mimir &middot; Auditable Memory Engine</h3>
     <span class="tag">AI Interpretability</span><span class="tag">Challenge 2</span><span class="tag">Challenge 4</span>
-    <p>Stores structured entities, insights, and architectural decisions with full provenance trails. Unlike opaque vector stores, every memory operation is typed, timestamped, and logged.</p>
+    <p>30 MCP tools. Rust binary. SQLite + FTS5 + hybrid vector search. Structured entity model with confidence decay, journaled append-only event log, and state management with TTL. Fully local &mdash; no API keys, no network calls at runtime.</p>
     <div class="challenge">
-      <strong>→ Challenge 2 (Verifiable Accountability):</strong> Audit trails make black-box failure analysis forensic. Trace exactly what the system knew, when it learned it, and when contamination entered — no speculation.<br>
-      <strong>→ Challenge 4 (Agentic Interpretability):</strong> 23 typed MCP tools expose the agent's full mental model. Operators see what it believes, why, and how beliefs evolved across long deployments.
+      <strong>&rarr; Challenge 2 (Verifiable Accountability):</strong> Journaled audit trail transforms black-box failure analysis into forensic investigation. Trace what the system knew, when it learned it, and when contamination entered.<br>
+      <strong>&rarr; Challenge 4 (Agentic Interpretability):</strong> 30 typed tools expose the agent's complete mental model. Every entity creation, relation, and insight is timestamped and attributable.
     </div>
     <div class="specs">
-      <span>Status:</span> v0.5-rc · <span>License:</span> MIT · <span>Backend:</span> SQLite, no external deps · <span>Tools:</span> 23 MCP tools, 40+ entities · github.com/tcconnally/mimir
+      <span>Version:</span> 1.0.1 &middot; <span>License:</span> MIT &middot; <span>Tools:</span> 30 MCP tools &middot; <span>Backend:</span> SQLite+FTS5, no cloud deps &middot; github.com/Perseus-Computing-LLC/mimir
     </div>
   </div>
 </div>
 
 <h2>Challenge Mapping</h2>
 <table>
-  <tr><th style="width:18%">AI Forge Challenge</th><th style="width:12%">Thrust</th><th>How Perseus &amp; Mimir Address It</th><th style="width:12%">Readiness</th></tr>
+  <tr><th style="width:18%">AI Forge Challenge</th><th style="width:11%">Thrust</th><th>How Perseus &amp; Mimir Address It</th><th style="width:11%">Readiness</th></tr>
   <tr>
     <td><strong>Challenge 2</strong><br>Black-Box Analysis of Long-Horizon Failures</td>
     <td>Interpretability</td>
-    <td>Mimir's audit trail provides the "verifiable records of system interactions" the challenge demands. Perseus context snapshots create a replayable timeline. Together: operators trace any emergent failure to its origin — which context was stale, which memory was poisoned, which decision cascaded.</td>
+    <td>Mimir's append-only journal provides the verifiable records the challenge demands. Perseus context snapshots create a replayable decision timeline. Combined: trace any emergent failure to its origin &mdash; which context was stale, which memory was poisoned, which decision cascaded.</td>
     <td>Deployed</td>
   </tr>
   <tr>
     <td><strong>Challenge 4</strong><br>Agentic AI Interpretability for Auditable Autonomy</td>
     <td>Interpretability</td>
-    <td>Perseus captures what the agent saw at each step. Mimir captures what it remembered and why. The combined trace — state → memory → action — gives operators "system-level visibility" into goal formation, planning, tool use, and memory updates without accessing model internals.</td>
+    <td>Perseus captures what the agent saw. Mimir captures what it knew and when. The trace chain &mdash; state &rarr; memory &rarr; action &mdash; gives operators system-level visibility into goal formation, planning, tool use, and memory evolution without accessing model internals.</td>
     <td>Deployed</td>
   </tr>
   <tr>
     <td><strong>AI Control</strong><br>Reliable Execution of Human Intent</td>
     <td>Control</td>
-    <td>Perseus is a control primitive: it anchors every decision to verified ground truth, preventing the context decay that causes agents to drift from human intent over long operations. Mimir's structured memory governance prevents context poisoning and maintains referential integrity.</td>
+    <td>Perseus is a control primitive: it anchors every decision to verified ground truth, preventing the context decay that causes agents to drift from intent. Mimir's structured entity model with confidence decay prevents memory drift and maintains referential integrity across long deployments.</td>
     <td>Deployed</td>
   </tr>
   <tr>
-    <td><strong>Challenge 5</strong><br>Evaluation for Scientific Discovery</td>
+    <td><strong>Challenge 5</strong><br>Evaluation of AI Systems for Scientific Discovery</td>
     <td>Interpretability</td>
-    <td>Structured entity storage with typed relationships and provenance is well-suited to tracking scientific claims, evidence chains, and reproducibility metadata. Extensible schema for domain-specific verification.</td>
+    <td>Mimir's typed entity schema with provenance tracking maps naturally to scientific claim chains, evidence records, and reproducibility metadata. Extensible taxonomy for domain-specific verification workflows.</td>
     <td>Adaptable</td>
   </tr>
 </table>
 
-<h2>Deployment &amp; Transition</h2>
+<h2>Product Family &amp; Ecosystem</h2>
 <div class="two-col">
   <ul>
-    <li><strong>Air-gap ready:</strong> No cloud services, no external API calls at runtime</li>
-    <li><strong>Self-contained:</strong> Single binary or Docker container per component</li>
-    <li><strong>Minimal compute:</strong> No GPU required; runs on commodity Linux</li>
-    <li><strong>Proven integration:</strong> Operating inside Hermes Agent platform (Nous Research)</li>
+    <li><strong>Perseus</strong> &mdash; Live context engine (v1.0.8, MIT, MCP Registry)</li>
+    <li><strong>Mimir</strong> &mdash; Persistent memory (v1.0.1, 30 tools, Rust/SQLite)</li>
+    <li><strong>MCTS</strong> &mdash; 120 MCP security analyzers (prompt injection, credential leaks, tool poisoning)</li>
+    <li><strong>PR Pilot</strong> &mdash; Autonomous 5-agent PR review pipeline (graduated autonomy L1&rarr;L3)</li>
   </ul>
   <ul>
-    <li><strong>Open-source:</strong> MIT License — zero IP friction for government or contractor adoption</li>
-    <li><strong>CUI-capable:</strong> SQLite backend, no telemetry, fully local</li>
-    <li><strong>Modular:</strong> Perseus and Mimir can be integrated independently into existing systems</li>
+    <li><strong>Blast Radius</strong> &mdash; Dependency impact analysis for GitLab</li>
+    <li><strong>Rapid Agent</strong> &mdash; Dual-backend memory agent (Google Cloud Hackathon)</li>
+    <li><strong>Anna Recall</strong> &mdash; Anna AI plugin with Mimir-powered memory (435 lines)</li>
+    <li><strong>Deployment:</strong> Self-contained binaries, air-gap ready, no cloud runtime deps</li>
+  </ul>
+</div>
+
+<h2>Transition Readiness</h2>
+<div class="two-col">
+  <ul>
+    <li><strong>MIT-licensed:</strong> Zero IP friction for government or contractor adoption</li>
+    <li><strong>Air-gap deployable:</strong> No cloud services, no outbound calls at runtime</li>
+    <li><strong>Self-contained:</strong> Rust binary (Mimir) + pip package (Perseus) &mdash; no GPU required</li>
+    <li><strong>MCP-native:</strong> Works with any MCP-compatible platform (Claude Desktop, Cursor, Hermes, OpenClaw)</li>
+  </ul>
+  <ul>
+    <li><strong>CUI-capable:</strong> SQLite backend, no telemetry, fully local operation</li>
+    <li><strong>Modular:</strong> Perseus and Mimir integrate independently into existing systems</li>
     <li><strong>Key personnel:</strong> Thomas Connally, U.S. citizen, available for Project Venture</li>
+    <li><strong>Patent pending:</strong> Perseus context engine</li>
   </ul>
 </div>
 
 <div class="footer">
-  <span>Thomas Connally · tcconnally@gmail.com · github.com/tcconnally</span>
-  <span><a href="https://perseus.observer">perseus.observer</a> · MIT License · June 2026</span>
+  <span>Thomas Connally &middot; tcconnally@gmail.com &middot; Perseus Computing LLC &middot; github.com/Perseus-Computing-LLC</span>
+  <span>perseus.observer &middot; MIT License &middot; June 2026</span>
 </div>
 
 </body>
